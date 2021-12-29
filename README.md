@@ -41,6 +41,37 @@ docker logs -f poc-olive-security
 ```shell
 docker exec -it poc-olive-security /bin/bash
 ```
+# Busniness PHP Microservice Deployment
+
+## Build docker images
+
+```shell
+docker build -t masalinasgancedo/poc-olive-business-php .
+```
+
+## Start docker container
+
+```shell
+docker run -d -p 8000:8000 --name poc-olive-business-php masalinasgancedo/poc-olive-business-php
+```
+
+## Connect docker container to network
+
+```shell
+docker network connect olive poc-olive-business-php
+```
+
+## Check logs container
+
+```shell
+docker logs poc-olive-business-php
+```
+
+## Login inside container
+
+```shell
+docker exec -it poc-olive-business-php /bin/bash
+```
 
 # Busniness Python Microservice Deployment
 
